@@ -1,0 +1,17 @@
+# Ignore virtual environment
+eleven_env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional)
+.vscode/
+
+# Environment variables (optional, future use)
+.env
