@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Your Concern | Eleven</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #80deea, #a5d6a7);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .interest-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      width: 400px;
+      color: #004d40;
+    }
+
+    .interest-box h2 {
+      margin-bottom: 10px;
+      font-size: 26px;
+      color: #004d40;
+    }
+
+    .interest-box p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #004d40;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #00695c;
+    }
+  </style>
+</head>
+<body>
+  <div class="interest-box">
+    <h2>Welcome, {{ session['user'] }} 👋</h2>
+    <p>Select your area of concern below:</p>
+
+    <form method="POST" action="{{ url_for('interest') }}">
+      <select name="interest" required>
+        <option value="" disabled selected>Choose one...</option>
+        <option value="business">📊 Business & Management</option>
+        <option value="finance">💰 Financial Consultancy</option>
+        <option value="career">🎓 Career & Education</option>
+        <option value="it">💻 IT & Technology</option>
+        <option value="legal">⚖️ Legal & Compliance</option>
+        <option value="marketing">📢 Marketing & Branding</option>
+      </select>
+      <button type="submit">Continue →</button>
+    </form>
+  </div>
+</body>
+</html>

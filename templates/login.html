@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Eleven</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #00bcd4, #4caf50);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      width: 350px;
+      color: #fff;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #fff;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #004d40;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .login-box button:hover {
+      background-color: #00796b;
+    }
+
+    .login-box p {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-box a {
+      color: #ffe082;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login to Eleven</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+
+  </div>
+</body>
+</html>
