@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: eleven-app
+    env: python
+    buildCommand: ""
+    startCommand: python app.py
+    envVars:
+      - key: OPENAI_API_KEY
+        value: your_openai_api_key_here
